@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>choco</title>
+<style>
+#outer{
+height:320px;
+width:680px;
+background:black;
+border:12px pink solid;
+position:relative;
+box-shadow:1px 1px 5px rgba(0,0,0,0.7);
+margin:40px auto 0;
+}
+#inner{
+overflow:hidden;
+height:320px;
+}
+#outer ul{
+margin:0;
+padding:0;
+position:relative;
+}
+#outer li{
+width:680px;
+height:320px;
+position:absolute;
+top:-325px;
+list-style:none;
+}
+#outer li.firstanimation{
+	animation:cyclefirst 25s linear infinite;
+}
+#outer li.secondanimation{
+	animation:cyclesecond 25s linear infinite;
+}
+#outer li.thirdanimation{
+	animation:cyclethird 25s linear infinite;
+}
+#outer li.fourthanimation{
+	animation:cyclefour 25s linear infinite;
+}
+@keyframes cycle {
+   0%  { top: 0px; } /* When you start the slide, the first image is already visible */
+   4%  { top: 0px; } /* Original Position */
+   16% { top: 0px; opacity:1; z-index:0; } /* From 4% to 16 % = for 3 seconds the image is visible */
+   20% { top: 325px; opacity: 0; z-index: 0; } /* From 16% to 20% = for 1 second exit image */
+   21% { top: -325px; opacity: 0; z-index: -1; } /* Return to Original Position */
+   92% { top: -325px; opacity: 0; z-index: 0; }
+   96% { top: -325px; opacity: 0; } /* From 96% to 100% = for 1 second enter image*/
+   100%{ top: 0px; opacity: 1; }
+}
+
+@keyframes cycletwo {
+   0%  { top: -325px; opacity: 0; } /* Original Position */
+   16% { top: -325px; opacity: 0; }/* Starts moving after 16% to this position */
+   20% { top: 0px; opacity: 1; }
+   24% { top: 0px; opacity: 1; }  /* From 20% to 24% = for 1 second enter image*/
+   36% { top: 0px; opacity: 1; z-index: 0; }   /* From 24% to 36 % = for 3 seconds the image is visible */
+   40% { top: 325px; opacity: 0; z-index: 0; } /* From 36% to 40% = for 1 second exit image */
+   41% { top: -325px; opacity: 0; z-index: -1; }   /* Return to Original Position */
+   100%{ top: -325px; opacity: 0; z-index: -1; }
+}
+
+@keyframes cyclethree {
+   0%  { top: -325px; opacity: 0; }
+   36% { top: -325px; opacity: 0; }
+   40% { top: 0px; opacity: 1; }
+   44% { top: 0px; opacity: 1; }
+   56% { top: 0px; opacity: 1; }
+   60% { top: 325px; opacity: 0; z-index: 0; }
+   61% { top: -325px; opacity: 0; z-index: -1; }
+   100%{ top: -325px; opacity: 0; z-index: -1; }
+}
+
+@keyframes cyclefour {
+   0%  { top: -325px; opacity: 0; }
+   56% { top: -325px; opacity: 0; }
+   60% { top: 0px; opacity: 1; }
+   64% { top: 0px; opacity: 1; }
+   76% { top: 0px; opacity: 1; z-index: 0; }
+   80% { top: 325px; opacity: 0; z-index: 0; }
+   81% { top: -325px; opacity: 0; z-index: -1; }
+   100%{ top: -325px; opacity: 0; z-index: -1; }
+}
+@keyframes cyclefive {
+   0%  { top: -325px; opacity: 0; }
+   76% { top: -325px; opacity: 0; }
+   80% { top: 0px; opacity: 1; }
+   84% { top: 0px; opacity: 1; }
+   96% { top: 0px; opacity: 1; z-index: 0; }
+   100%{ top: 325px; opacity: 0; z-index: 0; }
+}
+#slider .tooltip {
+   background: rgba(0,0,0,0.7);
+   width: 300px;
+   height: 60px;
+   position: relative;
+   bottom: 75px;
+   left: -320px;
+}
+
+#slider .tooltip h1 {
+   color: #fff;
+   font-size: 24px;
+   font-weight: 300;
+   line-height: 60px;
+   padding: 0 0 0 10px;
+}
+</style>
+</head>
+<body>
+<div id="outer">
+ <div id="inner">
+  <ul>
+	<li id="first" class="firstanimation"><img src="C:\users\vijesh\Desktop\c1.jpg"></li>
+	<li id="second" class="secondanimation"><img src="C:\users\vijesh\Desktop\c2.jpg"></li>
+	<li id="third" class="thirdanimation"><img src="C:\users\vijesh\Desktop\c3.jpg"></li>
+	<li id="fourth" class="fourthanimation"><img src="C:\users\vijesh\Desktop\c4.jpg"></li>
+  </ul>
+</div>
+</body>
+</html>
